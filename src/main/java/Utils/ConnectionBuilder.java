@@ -20,7 +20,7 @@ public class ConnectionBuilder {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://pethome.itbangmod.in.th/users","root","sitagile");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pet_home","root","root");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnectionBuilder.class.getName()).log(Level.SEVERE, null, ex);
         }
