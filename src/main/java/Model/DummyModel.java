@@ -26,13 +26,13 @@ public class DummyModel {
         ResultSet rs = null;
         try {
             st = con.createStatement();
-                rs = st.executeQuery("SELECT * FROM DEMO");
+                rs = st.executeQuery("SELECT * FROM TestLoadData");
         } catch (Exception e) {
             e.printStackTrace();
         }
         if(rs != null){
             while(rs.next())
-                demo = rs.getString("namedemo");
+                demo = rs.getString("data");
         }
         return demo; 
     }
