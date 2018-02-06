@@ -35,7 +35,7 @@ public class indexServlet extends HttpServlet {
             throws ServletException, IOException, SQLException {
         String text="";
         DummyModel dm= new DummyModel();
-        text = dm.queryDemo();
+//        text = dm.queryDemo();
         request.setAttribute("demo", text);
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
