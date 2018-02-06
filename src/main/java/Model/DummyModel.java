@@ -5,10 +5,35 @@
  */
 package Model;
 
+import Utils.ConnectionBuilder;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author azlich
  */
 public class DummyModel {
+    public DummyModel(){
     
+    }
+ public String queryDemo() throws SQLException{
+        String demo = "";
+        Connection con = ConnectionBuilder.getConnection();
+        Statement st;
+        ResultSet rs = null;
+        try {
+            st = con.createStatement();
+                rs = st.executeQuery("SELECT * FROM DEMO");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(rs != null){
+            while(rs.next())
+                demo = rs.getString("namedemo");
+        }
+        return demo; 
+    }
 }
